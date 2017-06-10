@@ -24,6 +24,7 @@ for (var i = 0; i < button.length; i++) {
     if (className == "clear") {
       console.log("poop")
       output.textContent = ""
+      output.style.fontSize = "1.5em"
       calculation = []
     }
     else if (className == "equal"){
@@ -43,7 +44,10 @@ for (var i = 0; i < button.length; i++) {
       answerLength = answerLength.length
 
       if (answerLength > 15) {
-        output.style.fontSize = "95%"
+        output.style.fontSize = "1.1em"
+        output.textContent = answer
+      } else if (answerLength > 25) {
+        output.style.fontSize = "0.9em"
         output.textContent = answer
       }
       else {
@@ -60,48 +64,6 @@ for (var i = 0; i < button.length; i++) {
       console.log(calculation)
       output.textContent = calculation.join(" ")
     }
-    //
-    // if (className !== "clear") {
-    //
-    //   if (className == "equal"){
-    //     var answer = calculation.join("")
-    //     answer = eval(answer)
-    //     function roundToEight(num) {
-    //       return +(Math.round(num + "e+8")  + "e-8");
-    //     }
-    //     // answer = roundToEight(answer)
-    //     let answerLength = String(answer)
-    //     answerLength = answerLength.length
-    //     console.log(answer)
-    //     console.log(answerLength)
-    //     if (answerLength > 15) {
-    //       output.style.fontSize = "90%"
-    //       output.textContent = answer
-    //     }
-    //     else {
-    //       output.textContent = answer
-    //       //max 10 characters
-    //     }
-    //
-    //
-    //
-    //   }
-    //
-    //   else {
-    //     calculation.push(value)
-    //     console.log(calculation)
-    //     output.textContent = calculation.join(" ")
-    //   }
-    // }
-    //
-    // else {
-    //
-    // console.log("poop")
-    // output.textContent = ""
-    // calculation = []
-    //
-    // }
-
   })
 
 }
