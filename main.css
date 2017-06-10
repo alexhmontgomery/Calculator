@@ -1,0 +1,79 @@
+
+* {
+box-sizing: border-box;
+margin: 0 auto;
+}
+
+body {
+}
+
+h2 {
+  font-family: arial;
+  font-weight: 200;
+  cursor: pointer;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: stretch;
+  align-items: stretch;
+  margin: 6% 30% 0% 30%;
+  height: 80vh;
+  border: 1px solid grey;
+
+}
+
+.number, .clear, .equal, .decimal {
+  border: 1px solid grey;
+  flex-basis: 25%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  color: white;
+  background-color: rgb(98, 178, 85);
+}
+
+.clear:hover, .equal:hover {
+  background-color: rgb(130, 193, 122);
+}
+
+.output {
+  border: 1px solid grey;
+  flex-basis: 75%;
+  text-align: right;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: center;
+  color: white;
+  background-color: rgb(98, 178, 85);
+  padding: 0% 15%;
+}
+
+.operator {
+  border: 1px solid grey;
+  flex-basis: 25%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  color: black;
+  background-color: rgb(130, 193, 122);
+}
+
+.operator:hover {
+  color: white;
+}
+
+
+
+/*------------------Mobile/Tablet Display-------------------*/
+
+@media screen and ( min-width: 545px ) {
+}
