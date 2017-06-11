@@ -11,29 +11,45 @@ var clear = document.querySelector(".clear")
 var calculation = []
 
 for (var i = 0; i < button.length; i++) {
-  let value = button[i].textContent
-  if (value == "X") {
-    value = "*"
-  }
-  let type = button[i].id
+  let value = button[i].id
   let className = button[i].className
 
   button[i].addEventListener('click', function() {
     console.log(value)
 
     if (className == "clear") {
-      console.log("poop")
       output.textContent = ""
       output.style.fontSize = "1.5em"
       calculation = []
     }
     else if (className == "equal"){
-      var answer = calculation.join("")
-      answer = eval(answer)
+      //adjust array to perform Square Roots
+      for (var i = 0; i < calculation.length; i++) {
+        if (calculation[i] == "SqRt") {
+          calculation[i] = "Math.sqrt("
+        }
+      }
+      for (var i = 0; i < calculation.length; i++) {
+        if (calculation[i] == "Math.sqrt(") {
+          calculation.push(')')
+        }
+      }
+      //adjust array to perform Squares
+      let power = []
+      for (var i = 0; i < calculation.length; i++) {
+        if (calculation[i] == "^2") {
+          power = ['Math.pow(']
+          calculation[i] = ", 2)"
+        }
+      }
 
-      calculation = []
-      calculation = [answer]
+      calculation = power.concat(calculation)
+      var answer = calculation.join("")
+
+      answer = eval(answer)
       console.log(answer)
+
+      calculation = [answer]
       console.log(calculation)
 
       function roundToEight(num) {
@@ -54,6 +70,15 @@ for (var i = 0; i < button.length; i++) {
         output.textContent = answer
       }
 
+    }
+    else if (value == 'question') {
+      output.style.fontSize = "0.9em"
+      output.textContent = "alex is best programmer in world"
+      setTimeout(function() {
+        output.textContent = ""
+        output.style.fontSize = "1.5em"
+        calculation = []
+      }, 3000)
     }
     else {
       if (output.textContent == answer) {
