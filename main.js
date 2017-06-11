@@ -72,7 +72,7 @@ for (var i = 0; i < button.length; i++) {
 
     }
     else if (value == 'question') {
-      output.style.fontSize = "0.9em"
+      output.style.fontSize = "0.8em"
       output.textContent = "alex is best programmer in world"
       setTimeout(function() {
         output.textContent = ""
